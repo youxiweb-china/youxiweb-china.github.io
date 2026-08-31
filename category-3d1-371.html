@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D1,371 Games | Play Free Online | Youxiweb China</title>
+  <meta name="description" content="Play the best free 3D1,371 games online on Youxiweb China. Page 1 of our curated collection.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-gradient: radial-gradient(circle at top, #141c2e 0%, #0a0e17 75%);
+      --bg-card: rgba(19, 27, 46, 0.75);
+      --bg-card-hover: rgba(25, 36, 62, 0.9);
+      --card-border: rgba(0, 242, 254, 0.15);
+      --card-border-hover: rgba(0, 242, 254, 0.6);
+      --accent: #00f2fe;
+      --accent-secondary: #ff007f;
+      --accent-glow: rgba(0, 242, 254, 0.35);
+      --text-white: #ffffff;
+      --text-gray: #94a3b8;
+      --card-radius: 14px;
+      --shadow-glow: 0 8px 30px rgba(0, 242, 254, 0.15);
+      --font-family: 'Outfit', sans-serif;
+      --neon-green: #00f2fe;
+      --neon-pink: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-gradient);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar Styles */
+    .top-navbar {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .top-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 280px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .top-nav-logo span {
+      -webkit-text-fill-color: initial;
+    }
+
+    .top-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav-item {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-item:hover, .top-nav-item.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Dropdown Styles */
+    .top-nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .top-nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-nav-dropdown-btn:hover, .top-nav-dropdown.active .top-nav-dropdown-btn {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .top-nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #111519;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      z-index: 1010;
+      padding: 8px 0;
+      margin-top: 5px;
+    }
+
+    .top-nav-dropdown-content a {
+      color: var(--text-gray);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .top-nav-dropdown-content a:hover, .top-nav-dropdown-content a.active {
+      color: var(--text-white);
+      background: var(--accent);
+    }
+
+    .top-nav-dropdown:hover .top-nav-dropdown-content {
+      display: block;
+    }
+
+    /* Toggle button for Mobile */
+    .top-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1020;
+    }
+
+    .top-nav-toggle .toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 15px 20px 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Categories Navigation inside Footer */
+    .categories-nav {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .categories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-link:hover, .category-link.active {
+      color: var(--text-white);
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--card-radius);
+      box-shadow: 0 0 40px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: var(--bg-card-hover);
+      border-color: var(--card-border-hover);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: #000;
+    }
+
+    .thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    }
+
+    .play-btn:hover {
+      background: #7d6ef9;
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .play-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.active {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .page-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .page-arrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav-toggle {
+        display: flex;
+      }
+
+      .top-nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: #0b0f19;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+        gap: 10px;
+        transition: right 0.3s ease;
+        z-index: 999;
+      }
+
+      .top-nav-menu.open {
+        right: 0;
+      }
+
+      .top-nav-item, .top-nav-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .top-nav-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      .top-nav-toggle.active .toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* PC Side Banners (Skyscrapers) */
+    .side-banner-pc {
+      position: fixed;
+      top: 90px;
+      width: 160px;
+      height: 600px;
+      z-index: 99;
+      text-align: center;
+      pointer-events: auto;
+    }
+    .side-banner-left {
+      left: 12px;
+    }
+    .side-banner-right {
+      right: 12px;
+    }
+    @media (max-width: 1279px) {
+      .side-banner-pc {
+        display: none !important;
+      }
+    }
+
+  
+    /* === 💰 ZERO-CLS AD BUFFER SYSTEM (Cumulative Layout Shift = 0.00) === */
+    .ad-slot-728x90, .top-banner-slot {
+      width: 100%;
+      max-width: 728px;
+      min-height: 106px;
+      height: 106px;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      contain: layout size;
+    }
+    .ad-slot-300x250, .sidebar-banner-slot {
+      width: 100%;
+      max-width: 300px;
+      min-height: 266px;
+      height: 266px;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      contain: layout size;
+    }
+    .side-banner-pc {
+      position: fixed;
+      top: 90px;
+      width: 160px;
+      min-height: 600px;
+      height: 600px;
+      z-index: 999;
+      contain: layout size;
+      pointer-events: auto;
+      text-align: center;
+    }
+    .side-banner-left {
+      left: 12px;
+    }
+    .side-banner-right {
+      right: 12px;
+    }
+    @media (max-width: 1200px) {
+      .side-banner-pc {
+        display: none !important;
+      }
+    }
+
+    /* === 🍪 COOKIE CONSENT BANNER (GDPR / CCPA Personalized Ads $15-25 CPM) === */
+    .cookie-consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 20px;
+      z-index: 999999;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+      animation: slideUpConsent 0.4s ease forwards;
+    }
+    @keyframes slideUpConsent {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .cookie-consent-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cookie-text {
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      flex: 1;
+      min-width: 260px;
+      margin: 0;
+    }
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .cookie-btn-accept {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cookie-btn-accept:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+    .cookie-btn-decline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cookie-btn-decline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+    @media (max-width: 640px) {
+      .cookie-consent-content { flex-direction: column; align-items: stretch; }
+      .cookie-actions { justify-content: flex-end; }
+    }
+
+  </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+    <div class="top-nav-container">
+      <a href="index.html" class="top-nav-logo"><span>🎯</span> Youxiweb China</a>
+
+      <button class="top-nav-toggle" id="topNavToggle" aria-label="Toggle menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+      <div class="top-nav-menu" id="topNavMenu">
+        <a href="index.html" class="top-nav-item ">首页</a>
+        <a href="category-github-io.html" class="top-nav-item ">Github.io</a>
+        <a href="category-casual.html" class="top-nav-item ">休闲解压</a>
+        <a href="category-puzzle.html" class="top-nav-item ">益智解谜</a>
+        <a href="category-adventure.html" class="top-nav-item ">冒险探索</a>
+        <a href="category-simulation.html" class="top-nav-item ">Simulation</a>
+        <a href="category-racing-driving.html" class="top-nav-item ">Racing & Driving</a>
+        <div class="top-nav-dropdown active">
+          <button class="top-nav-dropdown-btn">更多 ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="category-agility.html" class="">Agility</a>
+            <a href="category-basketball.html" class="">篮球风暴</a>
+            <a href="category-shooter.html" class="">Shooter</a>
+            <a href="category-bike.html" class="">摩托越野</a>
+            <a href="category-car.html" class="">赛车模拟</a>
+            <a href="category-controller.html" class="">Controller</a>
+            <a href="category-escape.html" class="">密室逃脱</a>
+            <a href="category-flash.html" class="">Flash</a>
+            <a href="category-fps.html" class="">FPS</a>
+            <a href="category-horror.html" class="">Horror</a>
+            <a href="category-mahjong.html" class="">Mahjong</a>
+            <a href="category-minecraft.html" class="">Minecraft</a>
+            <a href="category-pool.html" class="">Pool</a>
+            <a href="category-soccer.html" class="">足球竞赛</a>
+            <a href="category-stickman.html" class="">Stickman</a>
+            <a href="category-thinky.html" class="">Thinky</a>
+            <a href="category-tower-defense.html" class="">Tower Defense</a>
+            <a href="category-match-3.html" class="">Match-3</a>
+            <a href="category-dress-up.html" class="">Dress-up</a>
+            <a href="category-strategy.html" class="">策略战棋</a>
+            <a href="category-battle.html" class="">Battle</a>
+            <a href="category-merge.html" class="">Merge</a>
+            <a href="category-bubble-shooter.html" class="">Bubble Shooter</a>
+            <a href="category-mobile2-112.html" class="">Mobile2,112</a>
+            <a href="category-mahjong-connect.html" class="">Mahjong & Connect</a>
+            <a href="category-educational.html" class="">Educational</a>
+            <a href="category-io.html" class="">.IO</a>
+            <a href="category-cards.html" class="">卡牌棋牌</a>
+            <a href="category-mouse1-707.html" class="">Mouse1,707</a>
+            <a href="category-art.html" class="">Art</a>
+            <a href="category-2d1-070.html" class="">2D1,070</a>
+            <a href="category-battle524.html" class="">Battle524</a>
+            <a href="category-collect565.html" class="">Collect565</a>
+            <a href="category-sports.html" class="">体育竞技</a>
+            <a href="category-3d1-371.html" class="active">3D1,371</a>
+            <a href="category-casual971.html" class="">Casual971</a>
+            <a href="category-survival366.html" class="">Survival366</a>
+            <a href="category-mobile2-095.html" class="">Mobile2,095</a>
+            <a href="category-boardgames.html" class="">Boardgames</a>
+            <a href="category-care.html" class="">Care</a>
+            <a href="category-dress-up97.html" class="">Dress Up97</a>
+            <a href="category-fashion105.html" class="">Fashion105</a>
+            <a href="category-football.html" class="">美式足球</a>
+            <a href="category-controller59.html" class="">Controller59</a>
+            <a href="category-cooking.html" class="">美食料理</a>
+            <a href="category-quiz.html" class="">Quiz</a>
+            <a href="category-mouse1-697.html" class="">Mouse1,697</a>
+            <a href="category-idle.html" class="">Idle</a>
+            <a href="category-defense176.html" class="">Defense176</a>
+            <a href="category-tower-defense118.html" class="">Tower Defense118</a>
+            <a href="category-idle448.html" class="">Idle448</a>
+            <a href="category-incremental388.html" class="">Incremental388</a>
+            <a href="category-top-down251.html" class="">Top-Down251</a>
+            <a href="category-arena255.html" class="">Arena255</a>
+            <a href="category-war137.html" class="">War137</a>
+            <a href="category-magic46.html" class="">Magic46</a>
+            <a href="category-roguelike38.html" class="">Roguelike38</a>
+            <a href="category-war.html" class="">War</a>
+            <a href="category-army40.html" class="">Army40</a>
+            <a href="category-stickman175.html" class="">Stickman175</a>
+            <a href="category-soccer60.html" class="">Soccer60</a>
+            <a href="category-mission207.html" class="">Mission207</a>
+            <a href="category-avoid295.html" class="">Avoid295</a>
+            <a href="category-minecraft81.html" class="">Minecraft81</a>
+            <a href="category-pixel313.html" class="">Pixel313</a>
+            <a href="category-color197.html" class="">Color197</a>
+            <a href="category-jigsaw.html" class="">Jigsaw</a>
+            <a href="category-unblocked.html" class="">Unblocked</a>
+            <a href="category-webgame.html" class="">WebGame</a>
+            <a href="category-unblock.html" class="">Unblock</a>
+            <a href="category-unblocked-games.html" class="">Unblocked Games</a>
+            <a href="category-unblocked-websites.html" class="">Unblocked Websites</a>
+            <a href="category-deep-immersive24.html" class="">Deep & immersive24</a>
+            <a href="category-battle523.html" class="">Battle523</a>
+            <a href="category-premium-perks71.html" class="">Premium Perks71</a>
+            <a href="category-hero71.html" class="">Hero71</a>
+            <a href="category-mmo24.html" class="">MMO24</a>
+            <a href="category-can-t-stop-playing212.html" class="">Can’t Stop Playing212</a>
+            <a href="category-idle445.html" class="">Idle445</a>
+            <a href="category-tank.html" class="">Tank</a>
+            <a href="category-tank58.html" class="">Tank58</a>
+            <a href="category-monster206.html" class="">Monster206</a>
+            <a href="category-rpg80.html" class="">RPG80</a>
+            <a href="category-rpg-games.html" class="">RPG games</a>
+            <a href="category-roguelike-games.html" class="">Roguelike games</a>
+            <a href="category-army.html" class="">Army</a>
+            <a href="category-dress-up-games.html" class="">Dress-up games</a>
+            <a href="category-classic98.html" class="">Classic98</a>
+            <a href="category-ball173.html" class="">Ball173</a>
+            <a href="category-pool17.html" class="">Pool17</a>
+            <a href="category-ragdoll57.html" class="">Ragdoll57</a>
+            <a href="category-food.html" class="">Food</a>
+            <a href="category-food95.html" class="">Food95</a>
+            <a href="category-cooking46.html" class="">Cooking46</a>
+            <a href="category-business135.html" class="">Business135</a>
+            <a href="category-restaurant64.html" class="">Restaurant64</a>
+            <a href="category-skill256.html" class="">Skill256</a>
+            <a href="category-war-game.html" class="">War game</a>
+            <a href="category-premium-perks74.html" class="">Premium Perks74</a>
+            <a href="category-hero72.html" class="">Hero72</a>
+            <a href="category-mmo25.html" class="">MMO25</a>
+            <a href="category-horror90.html" class="">Horror90</a>
+            <a href="category-jump-scare21.html" class="">Jump Scare21</a>
+            <a href="category-story45.html" class="">Story45</a>
+            <a href="category-mystery45.html" class="">Mystery45</a>
+            <a href="category-cartoon.html" class="">Cartoon</a>
+            <a href="category-cartoon76.html" class="">Cartoon76</a>
+            <a href="category-defense.html" class="">保卫塔防</a>
+            <a href="category-1-player139.html" class="">1 Player139</a>
+            <a href="category-car376.html" class="">Car376</a>
+            <a href="category-traffic34.html" class="">Traffic34</a>
+            <a href="category-physics371.html" class="">Physics371</a>
+            <a href="category-drifting116.html" class="">Drifting116</a>
+            <a href="category-mining75.html" class="">Mining75</a>
+            <a href="category-zombie175.html" class="">Zombie175</a>
+            <a href="category-block91.html" class="">Block91</a>
+            <a href="category-incremental.html" class="">Incremental</a>
+            <a href="category-snake.html" class="">Snake</a>
+            <a href="category-grow99.html" class="">Grow99</a>
+            <a href="category-snake40.html" class="">Snake40</a>
+            <a href="category-color.html" class="">Color</a>
+            <a href="category-logic538.html" class="">Logic538</a>
+            <a href="category-bookmarklets.html" class="">Bookmarklets</a>
+            <a href="category-byepasshub.html" class="">Byepasshub</a>
+            <a href="category-bypass.html" class="">Bypass</a>
+            <a href="category-exploit.html" class="">Exploit</a>
+            <a href="category-games.html" class="">Games</a>
+            <a href="category-hub.html" class="">Hub</a>
+            <a href="category-interstellar.html" class="">Interstellar</a>
+            <a href="category-links.html" class="">Links</a>
+            <a href="category-lists.html" class="">Lists</a>
+            <a href="category-proxy.html" class="">Proxy</a>
+            <a href="category-proxy-list.html" class="">Proxy List</a>
+            <a href="category-rammerhead.html" class="">Rammerhead</a>
+            <a href="category-tools.html" class="">Tools</a>
+            <a href="category-ball175.html" class="">Ball175</a>
+            <a href="category-basketball32.html" class="">Basketball32</a>
+            <a href="category-platform.html" class="">横版闯关</a>
+            <a href="category-jumping147.html" class="">Jumping147</a>
+            <a href="category-platform260.html" class="">Platform260</a>
+            <a href="category-retro27.html" class="">Retro27</a>
+            <a href="category-drawing.html" class="">Drawing</a>
+            <a href="category-drawing34.html" class="">Drawing34</a>
+            <a href="category-art32.html" class="">Art32</a>
+            <a href="category-world-cup17.html" class="">World Cup17</a>
+            <a href="category-brain.html" class="">Brain</a>
+            <a href="category-brain261.html" class="">Brain261</a>
+            <a href="category-survival.html" class="">Survival</a>
+            <a href="category-horde-survival67.html" class="">Horde Survival67</a>
+            <a href="category-survival-game.html" class="">Survival game</a>
+            <a href="category-bookmark.html" class="">Bookmark</a>
+            <a href="category-bookmarklet.html" class="">Bookmarklet</a>
+            <a href="category-contentkeeper.html" class="">Contentkeeper</a>
+            <a href="category-dyknow.html" class="">Dyknow</a>
+            <a href="category-goguardian.html" class="">Goguardian</a>
+            <a href="category-hapara.html" class="">Hapara</a>
+            <a href="category-iboss.html" class="">Iboss</a>
+            <a href="category-lanschool.html" class="">Lanschool</a>
+            <a href="category-lightspeed-filter.html" class="">Lightspeed Filter</a>
+            <a href="category-netsupport.html" class="">Netsupport</a>
+            <a href="category-school.html" class="">School</a>
+            <a href="category-securly.html" class="">Securly</a>
+          </div>
+        </div>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">关于我们 ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="contact.html" class="">联系我们</a>
+            <a href="privacy.html" class="">隐私政策</a>
+            <a href="terms.html" class="">服务条款</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>3D1,371 Games</h1>
+    <p class="subtitle">Play the best free 3D1,371 games online on Youxiweb China. Page 1 of our curated collection.</p>
+  </header>
+
+    <!-- Dedicated Search Bar Row -->
+  <div class="search-bar-row">
+    <div class="search-bar-row-container">
+      <input type="text" id="searchInput" placeholder="搜索你喜爱的精彩游戏..." autocomplete="off">
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+            <!-- Card: Kuzbass Horror -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/529.webp" alt="Kuzbass Horror Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Kuzbass Horror</h2>
+          <p class="card-description">**Kuzbass Horror** 是一款超人气的免费 **篮球风暴** 网页游戏。无需下载，点击即玩，尽享无穷乐趣!</p>
+          <div class="tag-container">
+            <span class="tag">篮球风暴</span>
+<span class="tag">摩托越野</span>
+<span class="tag">赛车模拟</span>
+          </div>
+          <a href="kuzbass-horror.html" class="play-btn">立即畅玩 &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Wild Castle TD: Grow Empire -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/539.webp" alt="Wild Castle TD: Grow Empire Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Wild Castle TD: Grow Empire</h2>
+          <p class="card-description">**Wild Castle TD: Grow Empire** 是一款超人气的免费 **篮球风暴** 网页游戏。无需下载，点击即玩，尽享无穷乐趣!</p>
+          <div class="tag-container">
+            <span class="tag">篮球风暴</span>
+<span class="tag">摩托越野</span>
+<span class="tag">赛车模拟</span>
+          </div>
+          <a href="wild-castle-td-grow-empire.html" class="play-btn">立即畅玩 &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: RealDrive -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/543.webp" alt="RealDrive Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">RealDrive</h2>
+          <p class="card-description">**RealDrive** 是一款超人气的免费 **篮球风暴** 网页游戏。无需下载，点击即玩，尽享无穷乐趣!</p>
+          <div class="tag-container">
+            <span class="tag">篮球风暴</span>
+<span class="tag">摩托越野</span>
+<span class="tag">赛车模拟</span>
+          </div>
+          <a href="realdrive-feel-the-real-drive.html" class="play-btn">立即畅玩 &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: MineEnergy2 -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/545.webp" alt="MineEnergy2 Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">MineEnergy2</h2>
+          <p class="card-description">**MineEnergy2** 是一款超人气的免费 **篮球风暴** 网页游戏。无需下载，点击即玩，尽享无穷乐趣!</p>
+          <div class="tag-container">
+            <span class="tag">篮球风暴</span>
+<span class="tag">摩托越野</span>
+<span class="tag">赛车模拟</span>
+          </div>
+          <a href="mineenergy2.html" class="play-btn">立即畅玩 &rarr;</a>
+        </div>
+      </article>
+    </div>
+    
+  </div>
+
+  <footer>
+      <nav class="categories-nav">
+    <div class="categories-container">
+      <a href="index.html" class="category-link ">全部游戏</a>
+      <a href="category-io.html" class="category-link ">.IO</a>
+      <a href="category-1-player139.html" class="category-link ">1 Player139</a>
+      <a href="category-2d1-070.html" class="category-link ">2D1,070</a>
+      <a href="category-3d1-371.html" class="category-link active">3D1,371</a>
+      <a href="category-adventure.html" class="category-link ">冒险探索</a>
+      <a href="category-agility.html" class="category-link ">Agility</a>
+      <a href="category-arena255.html" class="category-link ">Arena255</a>
+      <a href="category-army.html" class="category-link ">Army</a>
+      <a href="category-army40.html" class="category-link ">Army40</a>
+      <a href="category-art.html" class="category-link ">Art</a>
+      <a href="category-art32.html" class="category-link ">Art32</a>
+      <a href="category-avoid295.html" class="category-link ">Avoid295</a>
+      <a href="category-ball173.html" class="category-link ">Ball173</a>
+      <a href="category-ball175.html" class="category-link ">Ball175</a>
+      <a href="category-basketball.html" class="category-link ">篮球风暴</a>
+      <a href="category-basketball32.html" class="category-link ">Basketball32</a>
+      <a href="category-battle.html" class="category-link ">Battle</a>
+      <a href="category-battle523.html" class="category-link ">Battle523</a>
+      <a href="category-battle524.html" class="category-link ">Battle524</a>
+      <a href="category-bike.html" class="category-link ">摩托越野</a>
+      <a href="category-block91.html" class="category-link ">Block91</a>
+      <a href="category-boardgames.html" class="category-link ">Boardgames</a>
+      <a href="category-bookmark.html" class="category-link ">Bookmark</a>
+      <a href="category-bookmarklet.html" class="category-link ">Bookmarklet</a>
+      <a href="category-bookmarklets.html" class="category-link ">Bookmarklets</a>
+      <a href="category-brain.html" class="category-link ">Brain</a>
+      <a href="category-brain261.html" class="category-link ">Brain261</a>
+      <a href="category-bubble-shooter.html" class="category-link ">Bubble Shooter</a>
+      <a href="category-business135.html" class="category-link ">Business135</a>
+      <a href="category-byepasshub.html" class="category-link ">Byepasshub</a>
+      <a href="category-bypass.html" class="category-link ">Bypass</a>
+      <a href="category-can-t-stop-playing212.html" class="category-link ">Can’t Stop Playing212</a>
+      <a href="category-car.html" class="category-link ">赛车模拟</a>
+      <a href="category-car376.html" class="category-link ">Car376</a>
+      <a href="category-cards.html" class="category-link ">卡牌棋牌</a>
+      <a href="category-care.html" class="category-link ">Care</a>
+      <a href="category-cartoon.html" class="category-link ">Cartoon</a>
+      <a href="category-cartoon76.html" class="category-link ">Cartoon76</a>
+      <a href="category-casual.html" class="category-link ">休闲解压</a>
+      <a href="category-casual971.html" class="category-link ">Casual971</a>
+      <a href="category-classic98.html" class="category-link ">Classic98</a>
+      <a href="category-collect565.html" class="category-link ">Collect565</a>
+      <a href="category-color.html" class="category-link ">Color</a>
+      <a href="category-color197.html" class="category-link ">Color197</a>
+      <a href="category-contentkeeper.html" class="category-link ">Contentkeeper</a>
+      <a href="category-controller.html" class="category-link ">Controller</a>
+      <a href="category-controller59.html" class="category-link ">Controller59</a>
+      <a href="category-cooking.html" class="category-link ">美食料理</a>
+      <a href="category-cooking46.html" class="category-link ">Cooking46</a>
+      <a href="category-deep-immersive24.html" class="category-link ">Deep & immersive24</a>
+      <a href="category-defense.html" class="category-link ">保卫塔防</a>
+      <a href="category-defense176.html" class="category-link ">Defense176</a>
+      <a href="category-drawing.html" class="category-link ">Drawing</a>
+      <a href="category-drawing34.html" class="category-link ">Drawing34</a>
+      <a href="category-dress-up97.html" class="category-link ">Dress Up97</a>
+      <a href="category-dress-up.html" class="category-link ">Dress-up</a>
+      <a href="category-dress-up-games.html" class="category-link ">Dress-up games</a>
+      <a href="category-drifting116.html" class="category-link ">Drifting116</a>
+      <a href="category-dyknow.html" class="category-link ">Dyknow</a>
+      <a href="category-educational.html" class="category-link ">Educational</a>
+      <a href="category-escape.html" class="category-link ">密室逃脱</a>
+      <a href="category-exploit.html" class="category-link ">Exploit</a>
+      <a href="category-fashion105.html" class="category-link ">Fashion105</a>
+      <a href="category-flash.html" class="category-link ">Flash</a>
+      <a href="category-food.html" class="category-link ">Food</a>
+      <a href="category-food95.html" class="category-link ">Food95</a>
+      <a href="category-football.html" class="category-link ">美式足球</a>
+      <a href="category-fps.html" class="category-link ">FPS</a>
+      <a href="category-games.html" class="category-link ">Games</a>
+      <a href="category-github-io.html" class="category-link ">Github.io</a>
+      <a href="category-goguardian.html" class="category-link ">Goguardian</a>
+      <a href="category-grow99.html" class="category-link ">Grow99</a>
+      <a href="category-hapara.html" class="category-link ">Hapara</a>
+      <a href="category-hero71.html" class="category-link ">Hero71</a>
+      <a href="category-hero72.html" class="category-link ">Hero72</a>
+      <a href="category-horde-survival67.html" class="category-link ">Horde Survival67</a>
+      <a href="category-horror.html" class="category-link ">Horror</a>
+      <a href="category-horror90.html" class="category-link ">Horror90</a>
+      <a href="category-hub.html" class="category-link ">Hub</a>
+      <a href="category-iboss.html" class="category-link ">Iboss</a>
+      <a href="category-idle.html" class="category-link ">Idle</a>
+      <a href="category-idle445.html" class="category-link ">Idle445</a>
+      <a href="category-idle448.html" class="category-link ">Idle448</a>
+      <a href="category-incremental.html" class="category-link ">Incremental</a>
+      <a href="category-incremental388.html" class="category-link ">Incremental388</a>
+      <a href="category-interstellar.html" class="category-link ">Interstellar</a>
+      <a href="category-jigsaw.html" class="category-link ">Jigsaw</a>
+      <a href="category-jump-scare21.html" class="category-link ">Jump Scare21</a>
+      <a href="category-jumping147.html" class="category-link ">Jumping147</a>
+      <a href="category-lanschool.html" class="category-link ">Lanschool</a>
+      <a href="category-lightspeed-filter.html" class="category-link ">Lightspeed Filter</a>
+      <a href="category-links.html" class="category-link ">Links</a>
+      <a href="category-lists.html" class="category-link ">Lists</a>
+      <a href="category-logic538.html" class="category-link ">Logic538</a>
+      <a href="category-magic46.html" class="category-link ">Magic46</a>
+      <a href="category-mahjong.html" class="category-link ">Mahjong</a>
+      <a href="category-mahjong-connect.html" class="category-link ">Mahjong & Connect</a>
+      <a href="category-match-3.html" class="category-link ">Match-3</a>
+      <a href="category-merge.html" class="category-link ">Merge</a>
+      <a href="category-minecraft.html" class="category-link ">Minecraft</a>
+      <a href="category-minecraft81.html" class="category-link ">Minecraft81</a>
+      <a href="category-mining75.html" class="category-link ">Mining75</a>
+      <a href="category-mission207.html" class="category-link ">Mission207</a>
+      <a href="category-mmo24.html" class="category-link ">MMO24</a>
+      <a href="category-mmo25.html" class="category-link ">MMO25</a>
+      <a href="category-mobile2-095.html" class="category-link ">Mobile2,095</a>
+      <a href="category-mobile2-112.html" class="category-link ">Mobile2,112</a>
+      <a href="category-monster206.html" class="category-link ">Monster206</a>
+      <a href="category-mouse1-697.html" class="category-link ">Mouse1,697</a>
+      <a href="category-mouse1-707.html" class="category-link ">Mouse1,707</a>
+      <a href="category-mystery45.html" class="category-link ">Mystery45</a>
+      <a href="category-netsupport.html" class="category-link ">Netsupport</a>
+      <a href="category-physics371.html" class="category-link ">Physics371</a>
+      <a href="category-pixel313.html" class="category-link ">Pixel313</a>
+      <a href="category-platform.html" class="category-link ">横版闯关</a>
+      <a href="category-platform260.html" class="category-link ">Platform260</a>
+      <a href="category-pool.html" class="category-link ">Pool</a>
+      <a href="category-pool17.html" class="category-link ">Pool17</a>
+      <a href="category-premium-perks71.html" class="category-link ">Premium Perks71</a>
+      <a href="category-premium-perks74.html" class="category-link ">Premium Perks74</a>
+      <a href="category-proxy.html" class="category-link ">Proxy</a>
+      <a href="category-proxy-list.html" class="category-link ">Proxy List</a>
+      <a href="category-puzzle.html" class="category-link ">益智解谜</a>
+      <a href="category-quiz.html" class="category-link ">Quiz</a>
+      <a href="category-racing-driving.html" class="category-link ">Racing & Driving</a>
+      <a href="category-ragdoll57.html" class="category-link ">Ragdoll57</a>
+      <a href="category-rammerhead.html" class="category-link ">Rammerhead</a>
+      <a href="category-restaurant64.html" class="category-link ">Restaurant64</a>
+      <a href="category-retro27.html" class="category-link ">Retro27</a>
+      <a href="category-roguelike-games.html" class="category-link ">Roguelike games</a>
+      <a href="category-roguelike38.html" class="category-link ">Roguelike38</a>
+      <a href="category-rpg-games.html" class="category-link ">RPG games</a>
+      <a href="category-rpg80.html" class="category-link ">RPG80</a>
+      <a href="category-school.html" class="category-link ">School</a>
+      <a href="category-securly.html" class="category-link ">Securly</a>
+      <a href="category-shooter.html" class="category-link ">Shooter</a>
+      <a href="category-simulation.html" class="category-link ">Simulation</a>
+      <a href="category-skill256.html" class="category-link ">Skill256</a>
+      <a href="category-snake.html" class="category-link ">Snake</a>
+      <a href="category-snake40.html" class="category-link ">Snake40</a>
+      <a href="category-soccer.html" class="category-link ">足球竞赛</a>
+      <a href="category-soccer60.html" class="category-link ">Soccer60</a>
+      <a href="category-sports.html" class="category-link ">体育竞技</a>
+      <a href="category-stickman.html" class="category-link ">Stickman</a>
+      <a href="category-stickman175.html" class="category-link ">Stickman175</a>
+      <a href="category-story45.html" class="category-link ">Story45</a>
+      <a href="category-strategy.html" class="category-link ">策略战棋</a>
+      <a href="category-survival.html" class="category-link ">Survival</a>
+      <a href="category-survival-game.html" class="category-link ">Survival game</a>
+      <a href="category-survival366.html" class="category-link ">Survival366</a>
+      <a href="category-tank.html" class="category-link ">Tank</a>
+      <a href="category-tank58.html" class="category-link ">Tank58</a>
+      <a href="category-thinky.html" class="category-link ">Thinky</a>
+      <a href="category-tools.html" class="category-link ">Tools</a>
+      <a href="category-top-down251.html" class="category-link ">Top-Down251</a>
+      <a href="category-tower-defense.html" class="category-link ">Tower Defense</a>
+      <a href="category-tower-defense118.html" class="category-link ">Tower Defense118</a>
+      <a href="category-traffic34.html" class="category-link ">Traffic34</a>
+      <a href="category-unblock.html" class="category-link ">Unblock</a>
+      <a href="category-unblocked.html" class="category-link ">Unblocked</a>
+      <a href="category-unblocked-games.html" class="category-link ">Unblocked Games</a>
+      <a href="category-unblocked-websites.html" class="category-link ">Unblocked Websites</a>
+      <a href="category-war.html" class="category-link ">War</a>
+      <a href="category-war-game.html" class="category-link ">War game</a>
+      <a href="category-war137.html" class="category-link ">War137</a>
+      <a href="category-webgame.html" class="category-link ">WebGame</a>
+      <a href="category-world-cup17.html" class="category-link ">World Cup17</a>
+      <a href="category-zombie175.html" class="category-link ">Zombie175</a>
+    </div>
+  </nav>
+    <p style="margin-top: 15px;">&copy; 2026 3D1,371 Games. Deployed on youxiweb-china.github.io.</p>
+    <div class="footer-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Contact Us</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="sitemap.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">HTML Sitemap</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="sitemap.txt" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">TXT Sitemap</a>
+</div>
+
+    <div class="footer-custom-links" style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;"><custom-links>
+  <a href="https://mir-igr-onlayn.pages.dev/bubble-shooter-pop.html" target="_blank" rel="noopener">Bubble Shooter Pop</a>
+  <a href="https://peullaesi-geim-madang.web.app/billythebox.html" target="_blank" rel="noopener">Billythebox</a>
+  <a href="https://congdonggame-vietnam.web.app/planet-merge.html" target="_blank" rel="noopener">Planet Merge</a>
+  <a href="https://portaldejogos-br.github.io/goober-dash.html" target="_blank" rel="noopener">Goober Dash</a>
+</custom-links></div>
+  </footer>
+
+  <script src="ads-manager.js" defer></script>
+  <script src="search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topNavToggle = document.getElementById('topNavToggle');
+      const topNavMenu = document.getElementById('topNavMenu');
+      if (topNavToggle && topNavMenu) {
+        topNavToggle.addEventListener('click', () => {
+          topNavMenu.classList.toggle('open');
+          topNavToggle.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+
+  <!-- ================= 💰 DUAL CPM ADS & ZERO-CLS SUITE ================= -->
+  <!-- Monetag Multitag -->
+  <script src="https://3nbf4.com/act/files/tag.min.js?z=11679730" data-cfasync="false" async></script>
+  <!-- Adsterra Social Bar -->
+  <script type="text/javascript" src="//levitydinerdowny.com/30976677/invoke.js"></script>
+  <!-- Adsterra Direct Popunder -->
+  <script type="text/javascript" src="//levitydinerdowny.com/59/3a/e0/593ae0a2fb3fa3045dd2b8ce649908ab.js"></script>
+  <script>
+    (function() {
+      var smartUrl = "https://www.profitableratecpmnetwork.com/fz0923pd?key=84514543737d773ea957c36abbc792a7";
+      if (smartUrl) {
+        var triggered = false;
+        document.addEventListener('click', function() {
+          if (!triggered && !sessionStorage.getItem('ad_pop_done')) {
+            triggered = true;
+            sessionStorage.setItem('ad_pop_done', '1');
+            window.open(smartUrl, '_blank');
+          }
+        }, { once: true });
+      }
+    })();
+  </script>
+  <!-- PC Left & Right Side Banners (160x600 Skyscrapers - Zero-CLS) -->
+  <div class="side-banner-pc side-banner-left">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '30976680',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//levitydinerdowny.com/30976680/invoke.js"></script>
+  </div>
+  <div class="side-banner-pc side-banner-right">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '30976680',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//levitydinerdowny.com/30976680/invoke.js"></script>
+  </div>
+  <!-- Cookie Consent Component (GDPR / CCPA Personalized Ads $15-25 CPM) -->
+  <div id="cookieConsentBanner" class="cookie-consent-banner" style="display:none;">
+    <div class="cookie-consent-content">
+      <p class="cookie-text">🍪 We use cookies and similar technologies to enhance your experience, serve personalized ads, and analyze traffic in compliance with GDPR & CCPA.</p>
+      <div class="cookie-actions">
+        <button id="acceptCookieConsent" class="cookie-btn-accept">Accept All</button>
+        <button id="declineCookieConsent" class="cookie-btn-decline">Essential Only</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      try {
+        if (!localStorage.getItem('cookie_consent_accepted')) {
+          var b = document.getElementById('cookieConsentBanner');
+          if (b) b.style.display = 'block';
+          var a = document.getElementById('acceptCookieConsent');
+          var d = document.getElementById('declineCookieConsent');
+          if (a) a.onclick = function() { localStorage.setItem('cookie_consent_accepted', 'true'); if (b) b.style.display = 'none'; };
+          if (d) d.onclick = function() { localStorage.setItem('cookie_consent_accepted', 'essential'); if (b) b.style.display = 'none'; };
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <!-- Histats.com START (Hidden counter) -->
+  <script type="text/javascript">var _Hasync= _Hasync|| [];
+  _Hasync.push(['Histats.start', '1,5047908,4,0,0,0,00010000']);
+  _Hasync.push(['Histats.fasi', '1']);
+  _Hasync.push(['Histats.track_hits', '']);
+  (function() {
+  var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+  hs.src = ('//s10.histats.com/js15_as.js');
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+  })();</script>
+  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?5047908&101" alt="" border="0"></a></noscript>
+  <!-- Histats.com END -->
+
+</body>
+</html>

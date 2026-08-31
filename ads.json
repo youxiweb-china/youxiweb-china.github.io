@@ -1,0 +1,75 @@
+{
+  "antiAdblock": {
+    "enabled": false,
+    "showWarning": false
+  },
+  "popunder": {
+    "enabled": true,
+    "frequency": "once_per_session",
+    "maxPerSession": 3,
+    "delay": 0,
+    "scripts": [
+      "https://levitydinerdowny.com/59/3a/e0/593ae0a2fb3fa3045dd2b8ce649908ab.js"
+    ]
+  },
+  "smartlink": {
+    "enabled": true,
+    "url": "https://www.profitableratecpmnetwork.com/fz0923pd?key=84514543737d773ea957c36abbc792a7",
+    "delay": 0,
+    "openInNewTab": true
+  },
+  "socialBar": {
+    "enabled": true,
+    "delay": 1500,
+    "script": "https://levitydinerdowny.com/30/97/66/30976677.js"
+  },
+  "banners": {
+    "aboveIframe": {
+      "enabled": true,
+      "rotation": true,
+      "rotationInterval": 30000,
+      "ads": [
+        {
+          "id": "adsterra-728x90",
+          "script": "https://levitydinerdowny.com/2a362e5cae20c33eeea29a03144bdf06/invoke.js",
+          "config": {
+            "key": "2a362e5cae20c33eeea29a03144bdf06",
+            "format": "iframe",
+            "height": 90,
+            "width": 728,
+            "params": {}
+          }
+        },
+        {
+          "id": "adsterra-468x60",
+          "script": "https://levitydinerdowny.com/01f7a449b0ada3ec332f7d5c7f10face/invoke.js",
+          "config": {
+            "key": "01f7a449b0ada3ec332f7d5c7f10face",
+            "format": "iframe",
+            "height": 60,
+            "width": 468,
+            "params": {}
+          }
+        }
+      ]
+    },
+    "belowIframe": {
+      "enabled": true,
+      "rotation": false,
+      "rotationInterval": 30000,
+      "ads": [
+        {
+          "id": "adsterra-300x250",
+          "script": "https://levitydinerdowny.com/504d3de3ce11bfc8653e7ec22accca8a/invoke.js",
+          "config": {
+            "key": "504d3de3ce11bfc8653e7ec22accca8a",
+            "format": "iframe",
+            "height": 250,
+            "width": 300,
+            "params": {}
+          }
+        }
+      ]
+    }
+  }
+}
